@@ -55,7 +55,7 @@ export default function HostYourOwn() {
   return (
     <>
       <section className="hyo-section">
-        <div className="hyo-wrap">
+        <div className={`hyo-wrap${activeTab === "train" ? " is-train" : ""}`}>
           <h1 className="hyo-title">Host Your Own</h1>
           <p className="hyo-lede">
             Two ways to bring BreadBreakers to your community. Choose the path
@@ -172,7 +172,7 @@ export default function HostYourOwn() {
 
       {activeTab === "train" && (
         <>
-          <section className="bg-white px-6 py-12 md:py-16">
+          <section className="bg-white px-6 pb-12 pt-4 md:pb-16 md:pt-6">
             <div className="mx-auto grid max-w-5xl items-stretch gap-0 overflow-hidden md:grid-cols-2">
               <div className="relative aspect-[4/3] w-full md:aspect-auto md:min-h-[420px]">
                 <Image
