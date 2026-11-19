@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { isNavItemActive, navLinks } from "@/lib/nav";
+import { links } from "@/lib/site";
 
 export default function NavLinks() {
   const pathname = usePathname();
@@ -54,12 +55,14 @@ export default function NavLinks() {
           </Link>
         );
       })}
-      <Link
-        href="/events"
+      <a
+        href={links.signupForm}
+        target="_blank"
+        rel="noopener noreferrer"
         className="rounded-full bg-[#c0532a] px-4 py-2 text-sm font-semibold uppercase tracking-wider text-white transition-colors hover:bg-[#a8461f]"
       >
         Sign Up
-      </Link>
+      </a>
     </nav>
   );
 }

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { links } from "@/lib/site";
 
 export default function WhoWeAre() {
   return (
@@ -22,12 +22,14 @@ export default function WhoWeAre() {
           connection to work together toward a more whole world.
         </p>
         <div className="mt-8">
-          <Link
-            href="/events"
+          <a
+            href={links.signupForm}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block rounded-full bg-[#c0532a] px-8 py-3 text-base font-bold text-white shadow-md shadow-[#c0532a]/30 transition-all hover:bg-[#a8461f] hover:shadow-lg"
           >
             Sign up or get involved
-          </Link>
+          </a>
         </div>
       </div>
     </section>
