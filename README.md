@@ -25,3 +25,4 @@ POSTMARK_TO_EMAIL=info@breadbreakerscommunity.org
 ```
 
 In Postmark, verify the **sender signature** for `POSTMARK_FROM_EMAIL` before testing. Without these variables, RSVPs still save but no email is sent.
+
