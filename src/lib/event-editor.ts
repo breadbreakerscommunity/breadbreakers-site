@@ -48,7 +48,7 @@ export function isValidSlug(slug: string): boolean {
 export const emptyEventEditorValues: EventEditorValues = {
   slug: "",
   chapter: "Reston",
-  title: "BreadBreakers Community Dinner",
+  title: "Community Dinner - Reston",
   month: "",
   day: "",
   dateLabel: "",

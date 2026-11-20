@@ -1,5 +1,5 @@
 export const images = {
-  logo: "/breadbreakersLogo.jpg",
+  logo: "/breadbreakers-logo.png",
   heroVideo: "/breadbreakers-hero.mp4",
   communityPhoto: "/community-photo.jpg",
   spreadTheWordPhoto: "/DSC09978.jpg",
@@ -30,6 +30,9 @@ export const aboutSlideshowImages = [
 export const links = {
   restorationChurch: "https://restorationreston.org/",
   facebook: "https://www.facebook.com/profile.php?id=61564660176717",
+  instagram: "https://www.instagram.com/breadbreakerscommunity",
+  x: "https://x.com/breadbreakers2",
+  linkedin: "https://www.linkedin.com/company/146881128",
   meetup: "https://www.meetup.com/breadbreakers/",
   email: "mailto:breadbreakersinfo@gmail.com",
   signupForm:

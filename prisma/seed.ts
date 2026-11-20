@@ -9,13 +9,6 @@ config({ path: ".env" });
 
 const MASTER_USERNAME = "master-access";
 
-const sharedDescription = [
-  "In a time of division and isolation, come be part of the community that's rebuilding the town square, one table at a time.",
-  'At this dinner, participants will get to choose between three different topics, including some current events. Topics range from the political, to the "slice of life", to the spiritual, to the philosophical, to the off-the-wall - but no matter which table you choose to sit at, you can be sure it\'ll be like no dinner conversation you\'ve had before! You can also suggest a topic by emailing us at BreadBreakersInfo@gmail.com.',
-  "Food will be provided for free. We'll have vegetarian and gluten-free options available. If you have any additional dietary restrictions (Celiac Disease, vegan, etc.) please let us know at BreadBreakersInfo@gmail.com so that we can implement the appropriate food handling procedures.",
-  "Join us, invite a friend, and be a part of the movement to mend our fractured society and normalize a better way of talking with one another.",
-];
-
 const venueName = "Reston Community Center Lake Anne";
 const mapQuery =
   "1609-A Washington Plaza North Reston, Virginia, 20190 United States";
@@ -38,14 +31,14 @@ function buildEvent(input: {
   return {
     slug: input.slug,
     chapter: "Reston",
-    title: "BreadBreakers Community Dinner",
+    title: "Community Dinner - Reston",
     month: input.month,
     day: input.day,
     dateLabel: input.dateLabel,
     timeLabel,
     venueName,
     mapQuery,
-    googleCalendarUrl: `http://www.google.com/calendar/event?action=TEMPLATE&text=${encodeURIComponent("BreadBreakers Community Dinner")}&dates=${calendarStart}/${calendarEnd}&location=${encodeURIComponent(googleLocation)}`,
+    googleCalendarUrl: `http://www.google.com/calendar/event?action=TEMPLATE&text=${encodeURIComponent("Community Dinner - Reston")}&dates=${calendarStart}/${calendarEnd}&location=${encodeURIComponent(googleLocation)}`,
     image: "/DSC00573.jpg",
     imageAlt: "BreadBreakers Community Dinner",
     isUpcoming: true,
@@ -53,31 +46,24 @@ function buildEvent(input: {
     formVariant: "standard" as const,
     calendarStart,
     calendarEnd,
-    description: sharedDescription,
+    description: [],
   };
 }
 
 export const seedEvents = [
-  buildEvent({
-    slug: "october-27-2026",
-    month: "Oct",
-    day: "27",
-    dateLabel: "Tuesday, October 27, 2026",
-    formName: "RSVP BB 10/27",
-  }),
-  buildEvent({
-    slug: "november-19-2026",
-    month: "Nov",
-    day: "19",
-    dateLabel: "Thursday, November 19, 2026",
-    formName: "RSVP BB 11/19",
-  }),
   buildEvent({
     slug: "december-17-2026",
     month: "Dec",
     day: "17",
     dateLabel: "Thursday, December 17, 2026",
     formName: "RSVP BB 12/17",
+  }),
+  buildEvent({
+    slug: "january-28-2027",
+    month: "Jan",
+    day: "28",
+    dateLabel: "Thursday, January 28, 2027",
+    formName: "RSVP BB 1/28",
   }),
 ];
 
@@ -134,7 +120,16 @@ async function main() {
   }
 
   await prisma.event.deleteMany({
-    where: { slug: { in: ["july-30-2026", "july-30"] } },
+    where: {
+      slug: {
+        in: [
+          "july-30-2026",
+          "july-30",
+          "october-27-2026",
+          "november-19-2026",
+        ],
+      },
+    },
   });
 
   for (const event of seedEvents) {

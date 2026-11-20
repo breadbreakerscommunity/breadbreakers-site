@@ -11,8 +11,14 @@ export const dynamic = "force-dynamic";
 
 export default async function EventsPage() {
   const events = await listPublicEvents("Reston");
-  const upcomingEvents = events.filter((event) => event.isUpcoming);
-  const pastEvents = events.filter((event) => !event.isUpcoming);
+  const byStart = (a: (typeof events)[number], b: (typeof events)[number]) =>
+    (a.calendarStart ?? "").localeCompare(b.calendarStart ?? "");
+  const upcomingEvents = events
+    .filter((event) => event.isUpcoming)
+    .sort(byStart);
+  const pastEvents = events
+    .filter((event) => !event.isUpcoming)
+    .sort((a, b) => byStart(b, a));
 
   return (
     <>
