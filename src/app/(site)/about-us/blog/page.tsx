@@ -19,7 +19,7 @@ export default async function BlogPage() {
             Blog
           </h1>
           <p className="mt-3 text-lg text-brown">
-            Stories and reflections from the BreadBreakers community
+            Stories and reflections from the BreadBreakers community.
           </p>
         </div>
 
